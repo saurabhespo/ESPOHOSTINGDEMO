@@ -2,26 +2,30 @@ from flask import Flask, request, jsonify
 import dbutils
 import queryutils
 import llmutils
-
+import logging
 app = Flask(__name__)
 
-
+logging.basicConfig(filename='error.log', level=logging.ERROR)
 @app.route('/', methods=['POST'])
 def hello():
     return "Hello Welcome to ESPO AI"
 
 @app.route('/answer', methods=['POST'])
 def get_answer():
-    print('in')
-    data = request.json
-    user_question = data.get('user_question')
-    session_id = data.get('session_id')
+     
+    try:
+        data = request.json
+        user_question = data.get('user_question')
+        session_id = data.get('session_id')
 
-    if user_question and session_id:
-       answer, followup = main(user_question, session_id)
-       return jsonify({'answer': answer, 'followup': followup}), 200
-    else:
-        return jsonify({'error': 'Invalid request parameters'}), 400
+        if user_question and session_id:
+            answer, followup = main(user_question, session_id)
+            return jsonify({'answer': answer, 'followup': followup}), 200
+        else:
+            return jsonify({'error': 'Invalid request parameters'}), 400
+    except Exception as e:
+           return logging.error({'error': str(e)}), 500
+   
 
 def main(user_question, session_id):
     # Your existing main function code goes here
