@@ -23,12 +23,12 @@ AZURE_DEPLOYMENT = "gpt-4"
 # CONNECTION_STRING = f"mssql+pyodbc:///?odbc_connect={SQL_STRING}"
 
 ##
-#params = urllib.parse.quote_plus(r"""Driver={ODBC Driver 18 for SQL Server};Server=tcp:espo-ai-sqldb.database.windows.net,1433;Database=AzureSQL-ESPO-SQL;Uid=CloudSAb19cb3dc;Pwd=Espoai@12auth;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;""")
-servername="LAPTOP-SDO1R816\MSSQLSERVER01";
-dbname="testdata";
-engine = 'mssql+pyodbc://@' + servername + '/' + dbname + '?trusted_connection=yes&driver=ODBC+Driver+17+for+SQL+Server'
+params = urllib.parse.quote_plus(r"""Driver={ODBC Driver 18 for SQL Server};Server=tcp:espo-ai-sqldb.database.windows.net,1433;Database=AzureSQL-ESPO-SQL;Uid=CloudSAb19cb3dc;Pwd=Espoai@12auth;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;""")
+# servername="LAPTOP-SDO1R816\MSSQLSERVER01";
+# dbname="testdata";
+# engine = 'mssql+pyodbc://@' + servername + '/' + dbname + '?trusted_connection=yes&driver=ODBC+Driver+17+for+SQL+Server'
 
-CONNECTION_STRING  =engine #'mssql+pyodbc:///?odbc_connect={}'.format(params)
+CONNECTION_STRING  ='mssql+pyodbc:///?odbc_connect={}'.format(params)
 
 #'ODBC Driver 17 for SQL Server'
 

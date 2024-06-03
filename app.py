@@ -5,6 +5,11 @@ import llmutils
 
 app = Flask(__name__)
 
+
+@app.route('/', methods=['POST'])
+def hello():
+    return "Hello Welcome to ESPO AI"
+
 @app.route('/answer', methods=['POST'])
 def get_answer():
     print('in')
