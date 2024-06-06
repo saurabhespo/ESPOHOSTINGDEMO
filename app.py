@@ -2,11 +2,15 @@ from flask import Flask, request, jsonify
 import dbutils
 import queryutils
 import llmutils
-import logging
+from flask import send_from_directory
 app = Flask(__name__)
 
-logging.basicConfig(filename='error.log', level=logging.ERROR)
-@app.route('/', methods=['POST'])
+
+@app.route('/Images/<path:filename>')
+def serve_file(filename):
+    return send_from_directory("Images", filename)
+
+@app.route('/', methods=['Get'])
 def hello():
     return "Hello Welcome to ESPO AI"
 
