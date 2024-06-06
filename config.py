@@ -33,5 +33,5 @@ CONNECTION_STRING  ='mssql+pyodbc:///?odbc_connect={}'.format(params)
 #'ODBC Driver 17 for SQL Server'
 
 ##Prompt
-PROMPT_FILE = f"{path}\\prompts.yml"
-HISTORY_FILE = f"{path}\\history.yml"
+PROMPT_FILE = f"{path}\prompts.yml"
+HISTORY_FILE = f"{path}\history.yml"
