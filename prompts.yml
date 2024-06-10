@@ -8,43 +8,28 @@ NL2SQL_PROMPT: |
     The user needs to fetch the data from MS SQL database accurately.
     Help the user by creating syntactically correct MS SQL query to run. 
     </context>
-
-    Here is the database table information:
-    <Table Information>
-
-        CREATE TABLE [CoursePublishTable] (
-            [Ticket_id] INTEGER NOT NULL, 
-            [Work_Item_Type] VARCHAR(300) COLLATE SQL_Latin1_General_CP1_CI_AS NULL, 
-            create_date DATETIME NULL, 
-            [Course_Name] VARCHAR(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL, 
-            [Course_Id] VARCHAR(100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL, 
-            [State] VARCHAR(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL, 
-            [Tags] VARCHAR(255) COLLATE SQL_Latin1_General_CP1_CI_AS NULL, 
-            [Ticket_Assigned_To] VARCHAR(100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL, 
-            [Course_Owner] VARCHAR(100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL, 
-            [CoursePublishRequesttype] VARCHAR(500) COLLATE SQL_Latin1_General_CP1_CI_AS NULL, 
-            [LPRequestType] VARCHAR(500) COLLATE SQL_Latin1_General_CP1_CI_AS NULL, 
-            [TragetingRequestType] VARCHAR(500) COLLATE SQL_Latin1_General_CP1_CI_AS NULL, 
-            [Inactive] BIT NULL, 
-            [Learning_Organization] VARCHAR(500) COLLATE SQL_Latin1_General_CP1_CI_AS NULL, 
-            [Item_Type] VARCHAR(100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL, 
-            [NeworExistingCourse] VARCHAR(100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL, 
-            [BusinessJustificationforUpdates] VARCHAR(500) COLLATE SQL_Latin1_General_CP1_CI_AS NULL, 
-            [LPID] VARCHAR(100) COLLATE SQL_Latin1_General_CP1_CI_AS NULL, 
-            [NeworExistingLP] VARCHAR(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-            CONSTRAINT [PK__CoursePu__ED7364E18D8A0587] PRIMARY KEY ([Ticket_id])
-    )
-
         Also, pay attention to which column is in which table.\nPay attention to use CAST(GETDATE() as date) function to get the current date, if the question involves "today".
         # also return distinct result and if data not found then use LIKE query if  and if user ask about lpid look LPIDExternal or LPIDInternal.
-          if user ask Can you tell me how many times this course example Trust Code: SBC (Standards of Business Conduct) FY24 was republished -  
-          Logic: Use 'Changes to Existing course' to analyze the number of requests submitted for Republish for this refer colunm NeworExistingCourse and do not include CoursePublishRequesttype colunm in query.
-          if user ask Who was the latest publisher who worked on the course  example Trust Code: SBC (Standards of Business Conduct) FY24 was republished
+        if user ask for course owner or couser id  in result  also return course id and course name
+
+        1. if user ask Can you tell me how many times this course example Trust Code: SBC (Standards of Business Conduct) FY24 was republished -  
+           Logic: Use 'Changes to Existing course' to analyze the number of requests submitted for Republish for this refer colunm NeworExistingCourse and do not include CoursePublishRequesttype colunm in query.
+        2. if user ask Can you tell me how many courses were  published in FY24 
+          Logic: Use 'New course' to analyze the number of requests submitted for publish for this refer colunm NeworExistingCourse and take distinct course_ID and do not include CoursePublishRequesttype colunm in query.
+        3. if user ask Who was the latest publisher who worked on the course  example Trust Code: SBC (Standards of Business Conduct) FY24 was republished
           Logic Use Ticket_Assigned_To Filed to find the latest publishing request and the publisher for this course
-          if user ask for first publish date Use New Course data  from refer colunm NeworExistingCourse to retrieve the first publish date use same logic for first publisher
-          if user ask for first publish date Use New Course data  from refer colunm NeworExistingCourse to retrieve the first publish date use same logic for first publisher
-          if user ask course id but name of course lise into learning path give learning path id or LPID.
+
+        4. if user ask for first publish date Use New Course data  from refer colunm NeworExistingCourse to retrieve the first publish date use same logic for first publisher 
+        5. if user ask  how many courses published in FY24 date Use New Course data  from refer colunm NeworExistingCourse
+        6. if user ask course id but name of course lise into learning path give learning path id or LPID.
+            LPID is nothing but Learning Path ID Refer LPID for learning path realed question
         
+        7. Ensure the use of the DISTINCT keyword for unique results.
+
+        .8 if user ask how many New Learning Paths were published 
+          Logic Use LPID Filed get distinct result
+
+
     To retrieve the course ID or the course owner's name based on user instructions, follow these steps:
     1. Interpret the user's instructions to understand the desired action.
     2. Load all pertinent data based on the user's request.
@@ -80,7 +65,7 @@ NL2SQL_PROMPT: |
 
     Note :please start fy from july not from january
 
-    To ascertain the count of newly published learning paths, check the "NeworExistingLP" column. For paths classified as "New Learning Path" in the "NeworExistingLP" column, they are considered newly published. Paths marked as "Existing Learning Path" in the "NeworExistingLP" column are those that have been republished. For retired paths, look for entries labeled "Retire a Learning Path.".
+    To ascertain the count of newly published learning paths, check the "NeworExistingLP" column. For paths classified as "New Learning Path" in the "NeworExistingLP" column, they are considered newly published. Paths marked as "Existing Learning Path" in the "NeworExistingLP" column are those that have been republished. For retired paths, look for entries labeled "Retire a Learning Path. and take Distinct LPID".
 
     targeting requests
     if user ask for targeting requests please check "Work_Item_Type"  column and value  "targeting"
@@ -118,7 +103,7 @@ NL2SQL_PROMPT: |
             - Be careful to not query for columns that do not exists.
             - Also, pay attention to which column is in which table.
             - Pay attention to use CAST(GETDATE() as date) function to get the current date, if the question involves "today".
-
+    \n\nUse the following format:\n\nQuestion: Question here\nSQLQuery: SQL Query to run\nSQLResult: Result of the SQLQuery\nAnswer: Final answer here\n\nOnly use the following tables:\n{table_info}\n\nQuestion: {input}'
     {format_instructions}
     """
     
@@ -134,6 +119,13 @@ SQL_PROMPT: |
      # also return distinct result and if data not found then use LIKE query if  and if user ask about lpid look LPIDExternal or LPIDInternal.
       if user ask Can you tell me how many times this course example Trust Code: SBC (Standards of Business Conduct) FY24 was republished -  
       Logic: Use Changes to Existing course to analyze the number of requests submitted for Republish for this refer colunm NeworExistingCourse and do not include CoursePublishRequesttype colunm in query.
+
+      if user ask Can you tell me how many times this course example Trust Code: SBC (Standards of Business Conduct) FY24 was republished -  
+      Logic: Use Changes to Existing course to analyze the number of requests submitted for Republish for this refer colunm NeworExistingCourse and do not include CoursePublishRequesttype colunm in query.
+    
+      If user ask How many courses were retired 
+      Logic: Look for " a Course" value  in column NeworExistingCourse  
+
       if user ask Who was the latest publisher who worked on the course  example Trust Code: SBC (Standards of Business Conduct) FY24 was republished
       Logic Use Ticket_Assigned_To Filed to find the latest publishing request and the publisher for this course
       if user ask for first publish date Use New Course data  from refer colunm NeworExistingCourse to retrieve the first publish date use same logic for first publisher
@@ -197,9 +189,7 @@ SQL_PROMPT: |
 
 QUERY_REWRITING_PROMPT: |
   """
-  You a question re-writer that converts an input question to a better version that is optimal for convertion into a MS SQL query.
-  Look at the input, historical questions and  try to reason about undelying semantic intent/meaning.
-
+  You  are a question re-writer who re-writes the user question only if the user question is incomplete and had some context from the questions from 'session_history'
   Here is the database table information:
     <Table Information>
 
@@ -242,9 +232,20 @@ QnA_PROMPT: |
     You are serving users of a learning platform to solve user's questions regarding course material.
 
     Given the user question and its answer as a context, Present the answer in a professional manner.
+    if User Ask  Realted question  Course Owner or Couser Id
+    Give Result like this 
+    example 
+    ----------------------------
+    The Course owner for Course Id (Course name) is Courseowner name.
+    The Course owner for Course name (Course Id ) is Courseowner name.
+
     please make sure donot trucncate the requested data.
     If "answer " field is blank , you need to respond "No data found".
-
+    If answer value is 0, based on the question respond as , there was/were no (query).
+    Example:
+    User query: How many courses were republished in (time period).
+    Answer:0
+    Answer: There were no courses republished in (time period).
    
     <context>
     User Query:
@@ -258,47 +259,28 @@ QnA_PROMPT: |
 QUERY_FOR_FOLLOWUP_PROMPT: |
       """
 
-      suggest few relevant follow-up questions related to the question. suggest only top 3 question . Please refer to below example. 
-        
-      Example:User Question: Who is the course owner for course id S9263639. Follow up questions:
-      1.How many time was this course republished
-      2. Who is the publisher of this course 
-      3. When was this course published for the first time.
-            
-      Return result Proper JSON format
-          
-            Here is the database table information:
-              <Table Information>
+        suggest few relevant follow-up questions related to the question. suggest only top 3 question . Please refer to below example. 
+        Only use below examples, you can ONLY MODIFY the parameters like FY24,H1/H2,/Q1/Q2/Q3/Q4,republished/retired/published.
+        Example1: User Question: Who is the course owner for course id S9263639. Follow up questions:
+        1. How many time was this course republished
+        2. Who is the publisher of this course
+        3. When was this course published for the first time.
+        4. How many courses were republished in FY24 Q3.
+        5. How many new courses were published in FY24 Q4.
+        6. How many courses were retired in FY24.
+        7. How many new courses were published in FY24 H2. 
+        8. How many Learning Paths were retired in FY24 H2.
+        9. How many  Learning Paths were republished in FY24 H2.
+        10. How many  Learning Paths were retired in FY24 Q2.
+        11.What is the course ID of this course.
 
-      CREATE TABLE [dbo].[CoursePublishTable](
-        [Ticket_id] [int] NOT NULL,
-        [Work_Item_Type] [varchar](300) NULL,
-        [create_date] [datetime] NULL,
-        [Course_Name] [varchar](255) NULL,
-        [Course_Id] [varchar](100) NULL,
-        [State] [varchar](50) NULL,
-        [Tags] [varchar](255) NULL,
-        [Ticket_Assigned_To] [varchar](100) NULL,
-        [Course_Owner] [varchar](100) NULL,
-        [CoursePublishRequesttype] [varchar](500) NULL,
-        [LPRequestType] [varchar](500) NULL,
-        [TragetingRequestType] [varchar](500) NULL,
-        [Inactive] [bit] NULL,
-        [Learning_Organization] [varchar](500) NULL,
-        [Item_Type] [varchar](100) NULL,
-        [NeworExistingCourse] [varchar](100) NULL,
-        [BusinessJustificationforUpdates] [varchar](500) NULL,
-        [LPID] [varchar](100) NULL,
-        [NeworExistingLP] [varchar](50) NULL
-          )
+        Return result Proper JSON format
 
-        </Table Information>
 
-      
 
-          
-          Here is the question
-          {input}
+
+        Here is the question
+        {input}
 
     
       """

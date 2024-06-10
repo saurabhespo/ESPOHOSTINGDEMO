@@ -12,12 +12,12 @@ def serve_file(filename):
 
 @app.route('/', methods=['Get'])
 def hello():
-    return "Hello Welcome to ESPO AI 1"
+    return "Hello Welcome to ESPO AI"
 
 @app.route('/answer', methods=['POST'])
 def get_answer():
      
-    try:
+   
         data = request.json
         user_question = data.get('user_question')
         session_id = data.get('session_id')
@@ -27,9 +27,7 @@ def get_answer():
             return jsonify({'answer': answer, 'followup': followup}), 200
         else:
             return jsonify({'error': 'Invalid request parameters'}), 400
-    except Exception as e:
-           return logging.error({'error': str(e)}), 500
-   
+  
 
 def main(user_question, session_id):
     # Your existing main function code goes here
