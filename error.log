@@ -1,0 +1,769 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5005
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:root:{'error': "(pyodbc.OperationalError) ('08001', '[08001] [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: No such host is known.\\r\\n (11001) (SQLDriverConnect); [08001] [Microsoft][ODBC Driver 18 for SQL Server]Login timeout expired (0); [08001] [Microsoft][ODBC Driver 18 for SQL Server]Invalid connection string attribute (0); [08001] [Microsoft][ODBC Driver 18 for SQL Server]A network-related or instance-specific error has occurred while establishing a connection to tpcp:espoq-ai-sqldb.database.windows.net,1433. Server is not found or not accessible. Check if instance name is correct and if SQL Server is configured to allow remote connections. For more information see SQL Server Books Online. (11001)')\n(Background on this error at: https://sqlalche.me/e/20/e3q8)"}
+ERROR:main:Exception on /answer [POST]
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'get_answer' did not return a valid response. The function either returned None or ended without a return statement.
+INFO:werkzeug:127.0.0.1 - - [03/Jun/2024 22:13:51] "[35m[1mPOST /answer HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5005
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5005
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5005
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2024 13:26:55] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2024 13:31:30] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2024 13:34:16] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2024 13:36:41] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5005
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2024 13:40:07] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5005
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2024 13:42:09] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2024 13:44:59] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5005
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2024 13:52:33] "POST /answer HTTP/1.1" 200 -
+ERROR:root:{'error': 'Error code: 400 - {\'error\': {\'message\': "This model\'s maximum context length is 131072 tokens. However, your messages resulted in 177564 tokens. Please reduce the length of the messages.", \'type\': \'invalid_request_error\', \'param\': \'messages\', \'code\': \'context_length_exceeded\'}}'}
+ERROR:main:Exception on /answer [POST]
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'get_answer' did not return a valid response. The function either returned None or ended without a return statement.
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2024 14:26:50] "[35m[1mPOST /answer HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2024 14:36:28] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2024 14:38:29] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2024 17:13:46] "POST /answer HTTP/1.1" 200 -
+ERROR:sqlalchemy.pool.impl.QueuePool:Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 986, in _finalize_fairy
+    fairy._reset(
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 1432, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\mssql\base.py", line 3117, in do_rollback
+    super().do_rollback(dbapi_connection)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 693, in do_rollback
+    dbapi_connection.rollback()
+pyodbc.OperationalError: ('08S01', '[08S01] [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: An existing connection was forcibly closed by the remote host.\r\n (10054) (SQLEndTran); [08S01] [Microsoft][ODBC Driver 18 for SQL Server]Communication link failure (10054)')
+ERROR:sqlalchemy.pool.impl.QueuePool:Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 986, in _finalize_fairy
+    fairy._reset(
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 1432, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\mssql\base.py", line 3117, in do_rollback
+    super().do_rollback(dbapi_connection)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 693, in do_rollback
+    dbapi_connection.rollback()
+pyodbc.OperationalError: ('08S01', '[08S01] [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: An existing connection was forcibly closed by the remote host.\r\n (10054) (SQLEndTran); [08S01] [Microsoft][ODBC Driver 18 for SQL Server]Communication link failure (10054)')
+ERROR:sqlalchemy.pool.impl.QueuePool:Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 986, in _finalize_fairy
+    fairy._reset(
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 1432, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\mssql\base.py", line 3117, in do_rollback
+    super().do_rollback(dbapi_connection)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 693, in do_rollback
+    dbapi_connection.rollback()
+pyodbc.OperationalError: ('08S01', '[08S01] [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: An existing connection was forcibly closed by the remote host.\r\n (10054) (SQLEndTran); [08S01] [Microsoft][ODBC Driver 18 for SQL Server]Communication link failure (10054)')
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5005
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2024 17:17:40] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2024 17:19:21] "[31m[1mPOST /answer HTTP/1.1[0m" 400 -
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2024 17:53:54] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2024 18:04:03] "[31m[1mPOST /answer HTTP/1.1[0m" 400 -
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2024 18:12:46] "POST /answer HTTP/1.1" 200 -
+ERROR:sqlalchemy.pool.impl.QueuePool:Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 986, in _finalize_fairy
+    fairy._reset(
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 1432, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\mssql\base.py", line 3117, in do_rollback
+    super().do_rollback(dbapi_connection)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 693, in do_rollback
+    dbapi_connection.rollback()
+pyodbc.OperationalError: ('08S01', '[08S01] [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: An existing connection was forcibly closed by the remote host.\r\n (10054) (SQLEndTran); [08S01] [Microsoft][ODBC Driver 18 for SQL Server]Communication link failure (10054)')
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2024 19:22:31] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2024 19:29:13] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2024 19:32:19] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2024 19:35:20] "POST /answer HTTP/1.1" 200 -
+ERROR:root:{'error': "(pyodbc.Error) ('HY090', '[HY090] [Microsoft][ODBC Driver Manager] Invalid string or buffer length (0) (SQLExecDirectW)')\n(Background on this error at: https://sqlalche.me/e/20/dbapi)"}
+ERROR:main:Exception on /answer [POST]
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'get_answer' did not return a valid response. The function either returned None or ended without a return statement.
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2024 19:37:11] "[35m[1mPOST /answer HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2024 20:42:51] "POST /answer HTTP/1.1" 200 -
+ERROR:sqlalchemy.pool.impl.QueuePool:Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 986, in _finalize_fairy
+    fairy._reset(
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 1432, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\mssql\base.py", line 3117, in do_rollback
+    super().do_rollback(dbapi_connection)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 693, in do_rollback
+    dbapi_connection.rollback()
+pyodbc.OperationalError: ('08S01', '[08S01] [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: An existing connection was forcibly closed by the remote host.\r\n (10054) (SQLEndTran); [08S01] [Microsoft][ODBC Driver 18 for SQL Server]Communication link failure (10054)')
+ERROR:sqlalchemy.pool.impl.QueuePool:Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 986, in _finalize_fairy
+    fairy._reset(
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 1432, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\mssql\base.py", line 3117, in do_rollback
+    super().do_rollback(dbapi_connection)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 693, in do_rollback
+    dbapi_connection.rollback()
+pyodbc.OperationalError: ('08S01', '[08S01] [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: An existing connection was forcibly closed by the remote host.\r\n (10054) (SQLEndTran); [08S01] [Microsoft][ODBC Driver 18 for SQL Server]Communication link failure (10054)')
+ERROR:sqlalchemy.pool.impl.QueuePool:Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 986, in _finalize_fairy
+    fairy._reset(
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 1432, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\mssql\base.py", line 3117, in do_rollback
+    super().do_rollback(dbapi_connection)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 693, in do_rollback
+    dbapi_connection.rollback()
+pyodbc.OperationalError: ('08S01', '[08S01] [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: An existing connection was forcibly closed by the remote host.\r\n (10054) (SQLEndTran); [08S01] [Microsoft][ODBC Driver 18 for SQL Server]Communication link failure (10054)')
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2024 20:43:37] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [04/Jun/2024 20:58:09] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 13:43:50] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 13:46:06] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 13:47:59] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 13:49:26] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 13:56:55] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 14:01:51] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 14:13:40] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 14:22:48] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 14:25:23] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 14:28:41] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 14:37:10] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 14:37:46] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 14:44:54] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 14:45:56] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 14:47:13] "POST /answer HTTP/1.1" 200 -
+ERROR:sqlalchemy.pool.impl.QueuePool:Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 986, in _finalize_fairy
+    fairy._reset(
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 1432, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\mssql\base.py", line 3117, in do_rollback
+    super().do_rollback(dbapi_connection)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 693, in do_rollback
+    dbapi_connection.rollback()
+pyodbc.OperationalError: ('08S01', '[08S01] [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: An existing connection was forcibly closed by the remote host.\r\n (10054) (SQLEndTran); [08S01] [Microsoft][ODBC Driver 18 for SQL Server]Communication link failure (10054)')
+ERROR:sqlalchemy.pool.impl.QueuePool:Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 986, in _finalize_fairy
+    fairy._reset(
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 1432, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\mssql\base.py", line 3117, in do_rollback
+    super().do_rollback(dbapi_connection)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 693, in do_rollback
+    dbapi_connection.rollback()
+pyodbc.OperationalError: ('08S01', '[08S01] [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: An existing connection was forcibly closed by the remote host.\r\n (10054) (SQLEndTran); [08S01] [Microsoft][ODBC Driver 18 for SQL Server]Communication link failure (10054)')
+ERROR:sqlalchemy.pool.impl.QueuePool:Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 986, in _finalize_fairy
+    fairy._reset(
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 1432, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\mssql\base.py", line 3117, in do_rollback
+    super().do_rollback(dbapi_connection)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 693, in do_rollback
+    dbapi_connection.rollback()
+pyodbc.OperationalError: ('08S01', '[08S01] [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: An existing connection was forcibly closed by the remote host.\r\n (10054) (SQLEndTran); [08S01] [Microsoft][ODBC Driver 18 for SQL Server]Communication link failure (10054)')
+ERROR:sqlalchemy.pool.impl.QueuePool:Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 986, in _finalize_fairy
+    fairy._reset(
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 1432, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\mssql\base.py", line 3117, in do_rollback
+    super().do_rollback(dbapi_connection)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 693, in do_rollback
+    dbapi_connection.rollback()
+pyodbc.OperationalError: ('08S01', '[08S01] [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: An existing connection was forcibly closed by the remote host.\r\n (10054) (SQLEndTran); [08S01] [Microsoft][ODBC Driver 18 for SQL Server]Communication link failure (10054)')
+ERROR:sqlalchemy.pool.impl.QueuePool:Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 986, in _finalize_fairy
+    fairy._reset(
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 1432, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\mssql\base.py", line 3117, in do_rollback
+    super().do_rollback(dbapi_connection)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 693, in do_rollback
+    dbapi_connection.rollback()
+pyodbc.OperationalError: ('08S01', '[08S01] [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: An existing connection was forcibly closed by the remote host.\r\n (10054) (SQLEndTran); [08S01] [Microsoft][ODBC Driver 18 for SQL Server]Communication link failure (10054)')
+ERROR:sqlalchemy.pool.impl.QueuePool:Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 986, in _finalize_fairy
+    fairy._reset(
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 1432, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\mssql\base.py", line 3117, in do_rollback
+    super().do_rollback(dbapi_connection)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 693, in do_rollback
+    dbapi_connection.rollback()
+pyodbc.OperationalError: ('08S01', '[08S01] [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: An existing connection was forcibly closed by the remote host.\r\n (10054) (SQLEndTran); [08S01] [Microsoft][ODBC Driver 18 for SQL Server]Communication link failure (10054)')
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5005
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 15:01:37] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 15:30:11] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 16:09:56] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 16:10:48] "POST /answer HTTP/1.1" 200 -
+ERROR:sqlalchemy.pool.impl.QueuePool:Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 986, in _finalize_fairy
+    fairy._reset(
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 1432, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\mssql\base.py", line 3117, in do_rollback
+    super().do_rollback(dbapi_connection)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 693, in do_rollback
+    dbapi_connection.rollback()
+pyodbc.OperationalError: ('08S01', '[08S01] [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: An existing connection was forcibly closed by the remote host.\r\n (10054) (SQLEndTran); [08S01] [Microsoft][ODBC Driver 18 for SQL Server]Communication link failure (10054)')
+ERROR:sqlalchemy.pool.impl.QueuePool:Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 986, in _finalize_fairy
+    fairy._reset(
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 1432, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\mssql\base.py", line 3117, in do_rollback
+    super().do_rollback(dbapi_connection)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 693, in do_rollback
+    dbapi_connection.rollback()
+pyodbc.OperationalError: ('08S01', '[08S01] [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: An existing connection was forcibly closed by the remote host.\r\n (10054) (SQLEndTran); [08S01] [Microsoft][ODBC Driver 18 for SQL Server]Communication link failure (10054)')
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5005
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:root:{'error': 'while scanning a simple key\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 274, column 1\ncould not find expected \':\'\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 276, column 1'}
+ERROR:main:Exception on /answer [POST]
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'get_answer' did not return a valid response. The function either returned None or ended without a return statement.
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 16:19:39] "[35m[1mPOST /answer HTTP/1.1[0m" 500 -
+ERROR:root:{'error': 'while scanning a simple key\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 274, column 1\ncould not find expected \':\'\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 276, column 1'}
+ERROR:main:Exception on /answer [POST]
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'get_answer' did not return a valid response. The function either returned None or ended without a return statement.
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 16:19:57] "[35m[1mPOST /answer HTTP/1.1[0m" 500 -
+ERROR:root:{'error': 'while scanning a simple key\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 274, column 1\ncould not find expected \':\'\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 276, column 1'}
+ERROR:main:Exception on /answer [POST]
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'get_answer' did not return a valid response. The function either returned None or ended without a return statement.
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 19:37:45] "[35m[1mPOST /answer HTTP/1.1[0m" 500 -
+ERROR:root:{'error': 'while scanning a simple key\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 274, column 1\ncould not find expected \':\'\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 276, column 1'}
+ERROR:main:Exception on /answer [POST]
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'get_answer' did not return a valid response. The function either returned None or ended without a return statement.
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 19:38:18] "[35m[1mPOST /answer HTTP/1.1[0m" 500 -
+ERROR:root:{'error': 'while scanning a simple key\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 274, column 1\ncould not find expected \':\'\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 276, column 1'}
+ERROR:main:Exception on /answer [POST]
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'get_answer' did not return a valid response. The function either returned None or ended without a return statement.
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 19:40:17] "[35m[1mPOST /answer HTTP/1.1[0m" 500 -
+ERROR:root:{'error': 'while scanning a simple key\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 274, column 1\ncould not find expected \':\'\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 276, column 1'}
+ERROR:main:Exception on /answer [POST]
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'get_answer' did not return a valid response. The function either returned None or ended without a return statement.
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 19:41:01] "[35m[1mPOST /answer HTTP/1.1[0m" 500 -
+ERROR:root:{'error': 'while scanning a simple key\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 274, column 1\ncould not find expected \':\'\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 276, column 1'}
+ERROR:main:Exception on /answer [POST]
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'get_answer' did not return a valid response. The function either returned None or ended without a return statement.
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 19:52:20] "[35m[1mPOST /answer HTTP/1.1[0m" 500 -
+ERROR:root:{'error': 'while scanning a simple key\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 274, column 1\ncould not find expected \':\'\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 276, column 1'}
+ERROR:main:Exception on /answer [POST]
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'get_answer' did not return a valid response. The function either returned None or ended without a return statement.
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 19:53:50] "[35m[1mPOST /answer HTTP/1.1[0m" 500 -
+ERROR:root:{'error': 'while scanning a simple key\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 274, column 1\ncould not find expected \':\'\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 276, column 1'}
+ERROR:main:Exception on /answer [POST]
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'get_answer' did not return a valid response. The function either returned None or ended without a return statement.
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 19:54:10] "[35m[1mPOST /answer HTTP/1.1[0m" 500 -
+ERROR:root:{'error': 'while scanning a simple key\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 274, column 1\ncould not find expected \':\'\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 276, column 1'}
+ERROR:main:Exception on /answer [POST]
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'get_answer' did not return a valid response. The function either returned None or ended without a return statement.
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 19:57:01] "[35m[1mPOST /answer HTTP/1.1[0m" 500 -
+ERROR:root:{'error': 'while scanning a simple key\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 274, column 1\ncould not find expected \':\'\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 276, column 1'}
+ERROR:main:Exception on /answer [POST]
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'get_answer' did not return a valid response. The function either returned None or ended without a return statement.
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 19:58:30] "[35m[1mPOST /answer HTTP/1.1[0m" 500 -
+ERROR:root:{'error': 'while scanning a simple key\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 274, column 1\ncould not find expected \':\'\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 276, column 1'}
+ERROR:main:Exception on /answer [POST]
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'get_answer' did not return a valid response. The function either returned None or ended without a return statement.
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 20:00:34] "[35m[1mPOST /answer HTTP/1.1[0m" 500 -
+ERROR:root:{'error': 'while scanning a simple key\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 274, column 1\ncould not find expected \':\'\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 276, column 1'}
+ERROR:main:Exception on /answer [POST]
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'get_answer' did not return a valid response. The function either returned None or ended without a return statement.
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 20:07:50] "[35m[1mPOST /answer HTTP/1.1[0m" 500 -
+ERROR:root:{'error': 'while scanning a simple key\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 274, column 1\ncould not find expected \':\'\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 276, column 1'}
+ERROR:main:Exception on /answer [POST]
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'get_answer' did not return a valid response. The function either returned None or ended without a return statement.
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 20:07:50] "[35m[1mPOST /answer HTTP/1.1[0m" 500 -
+ERROR:root:{'error': 'while scanning a simple key\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 274, column 1\ncould not find expected \':\'\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 276, column 1'}
+ERROR:main:Exception on /answer [POST]
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'get_answer' did not return a valid response. The function either returned None or ended without a return statement.
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 21:58:37] "[35m[1mPOST /answer HTTP/1.1[0m" 500 -
+ERROR:root:{'error': 'while scanning a simple key\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 274, column 1\ncould not find expected \':\'\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 276, column 1'}
+ERROR:main:Exception on /answer [POST]
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'get_answer' did not return a valid response. The function either returned None or ended without a return statement.
+INFO:werkzeug:127.0.0.1 - - [05/Jun/2024 22:09:22] "[35m[1mPOST /answer HTTP/1.1[0m" 500 -
+ERROR:root:{'error': 'while scanning a simple key\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 274, column 1\ncould not find expected \':\'\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 276, column 1'}
+ERROR:main:Exception on /answer [POST]
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'get_answer' did not return a valid response. The function either returned None or ended without a return statement.
+INFO:werkzeug:127.0.0.1 - - [06/Jun/2024 11:14:51] "[35m[1mPOST /answer HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5005
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+ERROR:root:{'error': 'while parsing a block mapping\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 1, column 1\nexpected <block end>, but found \'<scalar>\'\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 274, column 3'}
+ERROR:main:Exception on /answer [POST]
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'get_answer' did not return a valid response. The function either returned None or ended without a return statement.
+INFO:werkzeug:127.0.0.1 - - [06/Jun/2024 11:22:59] "[35m[1mPOST /answer HTTP/1.1[0m" 500 -
+ERROR:root:{'error': 'while scanning for the next token\nfound character \'\\t\' that cannot start any token\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 282, column 6'}
+ERROR:main:Exception on /answer [POST]
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'get_answer' did not return a valid response. The function either returned None or ended without a return statement.
+INFO:werkzeug:127.0.0.1 - - [06/Jun/2024 11:27:59] "[35m[1mPOST /answer HTTP/1.1[0m" 500 -
+ERROR:root:{'error': 'while scanning for the next token\nfound character \'\\t\' that cannot start any token\n  in "c:\\Users\\v-saurabhup\\Downloads\\NL2SQL\\NL2SQL\\prompts.yml", line 282, column 6'}
+ERROR:main:Exception on /answer [POST]
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'get_answer' did not return a valid response. The function either returned None or ended without a return statement.
+INFO:werkzeug:127.0.0.1 - - [06/Jun/2024 11:30:04] "[35m[1mPOST /answer HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5005
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [06/Jun/2024 11:32:10] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Jun/2024 11:33:46] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Jun/2024 11:35:24] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5005
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [06/Jun/2024 11:38:37] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Jun/2024 11:57:49] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Jun/2024 11:59:57] "POST /answer HTTP/1.1" 200 -
+ERROR:root:{'error': 'Error code: 400 - {\'error\': {\'message\': "This model\'s maximum context length is 131072 tokens. However, your messages resulted in 280034 tokens. Please reduce the length of the messages.", \'type\': \'invalid_request_error\', \'param\': \'messages\', \'code\': \'context_length_exceeded\'}}'}
+ERROR:main:Exception on /answer [POST]
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'get_answer' did not return a valid response. The function either returned None or ended without a return statement.
+INFO:werkzeug:127.0.0.1 - - [06/Jun/2024 12:15:16] "[35m[1mPOST /answer HTTP/1.1[0m" 500 -
+ERROR:root:{'error': '(pyodbc.ProgrammingError) (\'42000\', "[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Incorrect syntax near \'a\'. (102) (SQLExecDirectW)")\n[SQL: Please provide a specific question related to the database information provided.]\n(Background on this error at: https://sqlalche.me/e/20/f405)'}
+ERROR:main:Exception on /answer [POST]
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'get_answer' did not return a valid response. The function either returned None or ended without a return statement.
+INFO:werkzeug:127.0.0.1 - - [06/Jun/2024 12:20:32] "[35m[1mPOST /answer HTTP/1.1[0m" 500 -
+ERROR:root:{'error': '(pyodbc.ProgrammingError) (\'42000\', "[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Incorrect syntax near \'a\'. (102) (SQLExecDirectW)")\n[SQL: Please provide a user question.]\n(Background on this error at: https://sqlalche.me/e/20/f405)'}
+ERROR:main:Exception on /answer [POST]
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'get_answer' did not return a valid response. The function either returned None or ended without a return statement.
+INFO:werkzeug:127.0.0.1 - - [06/Jun/2024 12:21:34] "[35m[1mPOST /answer HTTP/1.1[0m" 500 -
+ERROR:sqlalchemy.pool.impl.QueuePool:Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 986, in _finalize_fairy
+    fairy._reset(
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 1432, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\mssql\base.py", line 3117, in do_rollback
+    super().do_rollback(dbapi_connection)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 693, in do_rollback
+    dbapi_connection.rollback()
+pyodbc.OperationalError: ('08S01', '[08S01] [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: An existing connection was forcibly closed by the remote host.\r\n (10054) (SQLEndTran); [08S01] [Microsoft][ODBC Driver 18 for SQL Server]Communication link failure (10054)')
+INFO:werkzeug:127.0.0.1 - - [06/Jun/2024 12:24:59] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Jun/2024 12:26:03] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Jun/2024 12:57:23] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Jun/2024 13:13:37] "POST /answer HTTP/1.1" 200 -
+ERROR:root:{'error': '(pyodbc.ProgrammingError) (\'42000\', "[42000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Incorrect syntax near the keyword \'is\'. (156) (SQLExecDirectW)")\n[SQL: This question is unrelated to the database content and cannot be converted into an MS SQL query.]\n(Background on this error at: https://sqlalche.me/e/20/f405)'}
+ERROR:main:Exception on /answer [POST]
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1174, in make_response
+    raise TypeError(
+TypeError: The view function for 'get_answer' did not return a valid response. The function either returned None or ended without a return statement.
+INFO:werkzeug:127.0.0.1 - - [06/Jun/2024 13:14:41] "[35m[1mPOST /answer HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [06/Jun/2024 14:05:26] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Jun/2024 14:28:12] "POST /answer HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [06/Jun/2024 15:15:22] "[33mGET /Images/ESPO_Logo_Blue%20gradient.png HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [06/Jun/2024 15:15:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+ERROR:sqlalchemy.pool.impl.QueuePool:Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 986, in _finalize_fairy
+    fairy._reset(
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 1432, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\mssql\base.py", line 3117, in do_rollback
+    super().do_rollback(dbapi_connection)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 693, in do_rollback
+    dbapi_connection.rollback()
+pyodbc.OperationalError: ('08S01', '[08S01] [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: An existing connection was forcibly closed by the remote host.\r\n (10054) (SQLEndTran); [08S01] [Microsoft][ODBC Driver 18 for SQL Server]Communication link failure (10054)')
+ERROR:sqlalchemy.pool.impl.QueuePool:Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 986, in _finalize_fairy
+    fairy._reset(
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 1432, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\mssql\base.py", line 3117, in do_rollback
+    super().do_rollback(dbapi_connection)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 693, in do_rollback
+    dbapi_connection.rollback()
+pyodbc.OperationalError: ('08S01', '[08S01] [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: An existing connection was forcibly closed by the remote host.\r\n (10054) (SQLEndTran); [08S01] [Microsoft][ODBC Driver 18 for SQL Server]Communication link failure (10054)')
+ERROR:sqlalchemy.pool.impl.QueuePool:Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 986, in _finalize_fairy
+    fairy._reset(
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 1432, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\mssql\base.py", line 3117, in do_rollback
+    super().do_rollback(dbapi_connection)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 693, in do_rollback
+    dbapi_connection.rollback()
+pyodbc.OperationalError: ('08S01', '[08S01] [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: An existing connection was forcibly closed by the remote host.\r\n (10054) (SQLEndTran); [08S01] [Microsoft][ODBC Driver 18 for SQL Server]Communication link failure (10054)')
+ERROR:sqlalchemy.pool.impl.QueuePool:Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 986, in _finalize_fairy
+    fairy._reset(
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 1432, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\mssql\base.py", line 3117, in do_rollback
+    super().do_rollback(dbapi_connection)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 693, in do_rollback
+    dbapi_connection.rollback()
+pyodbc.OperationalError: ('08S01', '[08S01] [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: An existing connection was forcibly closed by the remote host.\r\n (10054) (SQLEndTran); [08S01] [Microsoft][ODBC Driver 18 for SQL Server]Communication link failure (10054)')
+ERROR:sqlalchemy.pool.impl.QueuePool:Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 986, in _finalize_fairy
+    fairy._reset(
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 1432, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\mssql\base.py", line 3117, in do_rollback
+    super().do_rollback(dbapi_connection)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 693, in do_rollback
+    dbapi_connection.rollback()
+pyodbc.OperationalError: ('08S01', '[08S01] [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: An existing connection was forcibly closed by the remote host.\r\n (10054) (SQLEndTran); [08S01] [Microsoft][ODBC Driver 18 for SQL Server]Communication link failure (10054)')
+ERROR:sqlalchemy.pool.impl.QueuePool:Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 986, in _finalize_fairy
+    fairy._reset(
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\pool\base.py", line 1432, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\dialects\mssql\base.py", line 3117, in do_rollback
+    super().do_rollback(dbapi_connection)
+  File "C:\Users\v-saurabhup\AppData\Local\Programs\Python\Python312\Lib\site-packages\sqlalchemy\engine\default.py", line 693, in do_rollback
+    dbapi_connection.rollback()
+pyodbc.OperationalError: ('08S01', '[08S01] [Microsoft][ODBC Driver 18 for SQL Server]TCP Provider: An existing connection was forcibly closed by the remote host.\r\n (10054) (SQLEndTran); [08S01] [Microsoft][ODBC Driver 18 for SQL Server]Communication link failure (10054)')

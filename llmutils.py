@@ -2,6 +2,8 @@ import os
 
 import config
 import yaml
+import pandas as pd
+import json
 from langchain_openai import AzureChatOpenAI
 
 os.environ["AZURE_OPENAI_API_KEY"] = config.AZURE_OPENAI_API_KEY
@@ -15,6 +17,25 @@ def get_prompt(prompt_name):
 
     return prompt
 
+
+def get_questions():
+    with open(config.QUES_FILE, "r", encoding="utf-8") as f:
+        questions = yaml.safe_load(f)
+        followup = pd.Series(questions)
+        followup = followup.sample(3, replace=False,  axis=0).to_json()
+     
+        input_data = {
+        "follow_up_questions": [
+        
+        ]
+         }
+        additional_questions=json.loads(followup)
+    for key in sorted(additional_questions.keys()):
+       input_data["follow_up_questions"].append({"question": additional_questions[key]})
+
+        # Convert to JSON format
+    output_json = json.dumps(input_data, indent=2)
+    return output_json
 
 def get_history():
     with open(config.HISTORY_FILE, "r", encoding="utf-8") as f:
@@ -41,5 +62,5 @@ def get_model(temperature=0.1):
 
 
 if __name__ == "__main__":
-    x = get_history()
+    x = get_questions()
     print(x)

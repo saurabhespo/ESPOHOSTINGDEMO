@@ -3,6 +3,7 @@ import dbutils
 import queryutils
 import llmutils
 from flask import send_from_directory
+import pandas as pd
 app = Flask(__name__)
 
 
@@ -16,8 +17,7 @@ def hello():
 
 @app.route('/answer', methods=['POST'])
 def get_answer():
-     
-   
+
         data = request.json
         user_question = data.get('user_question')
         session_id = data.get('session_id')
@@ -27,14 +27,15 @@ def get_answer():
             return jsonify({'answer': answer, 'followup': followup}), 200
         else:
             return jsonify({'error': 'Invalid request parameters'}), 400
-  
+
 
 def main(user_question, session_id):
     # Your existing main function code goes here
+    
     session = llmutils.get_history()
     if session is not None:
         if session_id in session:
-            history = session[session_id]
+            history = session[session_id][-5:]
         else:
             history = []
     else:
@@ -49,16 +50,18 @@ def main(user_question, session_id):
     table_info = dbutils.get_table_info()
 
     question = queryutils.query_rewriter(query=user_question, session_history=history)
+    print(question)
 
     sql_query = queryutils.get_sql_query(query=question, table_info=table_info)
 
     answer = queryutils.execute_sql_query(query=sql_query, db=db)
-
+    print (answer)
     answer = queryutils.generate_qna_ans(user_query=question, answer=answer)
-
-    followup = queryutils.generate_qna_followup(user_query=question)
-    print(followup)
-    return answer,followup
+    print (answer)
+    followup = llmutils.get_questions() #queryutils.generate_qna_followup(user_query=question)
+    print (followup)
+    return answer, followup
 
 if __name__ == "__main__":
-    app.run(port=5005)
+  app.run(debug=True,port=5005)
+ 

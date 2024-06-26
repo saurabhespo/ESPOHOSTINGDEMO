@@ -22,16 +22,21 @@ AZURE_DEPLOYMENT = "gpt-4"
 
 # CONNECTION_STRING = f"mssql+pyodbc:///?odbc_connect={SQL_STRING}"
 
-##
-params = urllib.parse.quote_plus(r"""Driver={ODBC Driver 18 for SQL Server};Server=tcp:espo-ai-sqldb.database.windows.net,1433;Database=AzureSQL-ESPO-SQL;Uid=CloudSAb19cb3dc;Pwd=Espoai@12auth;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;""")
+##;UID=UserName;Authentication=ActiveDirectoryInteractive;Encrypt=yes;
+##params = urllib.parse.quote_plus(r"""Driver={ODBC Driver 18 for SQL Server};Server=tcp:espo-ai-sqldb.database.windows.net,1433;Database=AzureSQL-ESPO-SQL;Uid=CloudSAb19cb3dc;Pwd=Espoai@12auth;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;""")
+params = urllib.parse.quote_plus(r"""Driver={ODBC Driver 18 for SQL Server};Server=tcp:espo-ai-sqldb.database.windows.net,1433;Database=AzureSQL-ESPO-SQL;Authentication=ActiveDirectoryIntegrated;Encrypt=yes;""")
 # servername="LAPTOP-SDO1R816\MSSQLSERVER01";
 # dbname="testdata";
 # engine = 'mssql+pyodbc://@' + servername + '/' + dbname + '?trusted_connection=yes&driver=ODBC+Driver+17+for+SQL+Server'
 
-CONNECTION_STRING  ='mssql+pyodbc:///?odbc_connect={}'.format(params)
+#CONNECTION_STRING  = 'mssql+pyodbc:///?odbc_connect={}'.format(params)
+
+CONNECTION_STRING = "Driver={ODBC Driver 18 for SQL Server};Server=tcp:espo-ai-sqldb.database.windows.net,1433;Database=AzureSQL-ESPO-SQL;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30"
 
 #'ODBC Driver 17 for SQL Server'
 
 ##Prompt
-PROMPT_FILE = f"{path}\prompts.yml"
-HISTORY_FILE = f"{path}\history.yml"
+PROMPT_FILE = f"{path}/prompts.yml"
+HISTORY_FILE = f"{path}/history.yml"
+QUES_FILE = f"{path}/Question.yml"
+

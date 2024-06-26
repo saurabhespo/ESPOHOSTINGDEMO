@@ -6,8 +6,9 @@ NL2SQL_PROMPT: |
     <context>
     The user has specific questions in natural language and data related to the question in MS SQL database.
     The user needs to fetch the data from MS SQL database accurately.
-    Help the user by creating syntactically correct MS SQL query to run. 
-    </context>
+    Help the user by creating syntactically correct MS SQL query to run.
+   
+       </context>
         Also, pay attention to which column is in which table.\nPay attention to use CAST(GETDATE() as date) function to get the current date, if the question involves "today".
         # also return distinct result and if data not found then use LIKE query if  and if user ask about lpid look LPIDExternal or LPIDInternal.
         if user ask for course owner or couser id  in result  also return course id and course name
@@ -29,6 +30,8 @@ NL2SQL_PROMPT: |
         .8 if user ask how many New Learning Paths were published 
           Logic Use LPID Filed get distinct result
 
+      if user ask How many requests have courseowner name  as the course owner 
+      logic check for distinct course id  in table
 
     To retrieve the course ID or the course owner's name based on user instructions, follow these steps:
     1. Interpret the user's instructions to understand the desired action.
@@ -73,7 +76,22 @@ NL2SQL_PROMPT: |
     targeting requests by its type
     if user ask for targeting requests please check  "TragetingRequestType"
     Note: Always try to provide unique value 
+    --------------------------------------------------------
+    Examples:
 
+    1.  (
+      User query: How many courses were published for MAaaS?.
+      logic MAaas stand For "MCAPS Academy as a Service"  for this refer column ProgramorLineofBusiness
+      )
+  ------------------------------------------------------
+
+  Example 
+   User query: How many courses  Retiring FY24?.
+    logic to use this query SELECT count(distinct(course_id)) FROM [CoursePublishTable] WHERE  Retirement_date between  getdate() and DATEADD(month,2,getdate())
+   
+    User query: what are  the course Retiring THIS MONTH?.
+    logic to use this query SELECT top 10 [Retirement_date],[Course_Name] FROM [CoursePublishTable] WHERE  Retirement_date between  getdate() and DATEADD(month,2,getdate())
+   
     if user ask FY data any year FY start from  
     example
     -------------------------------
@@ -190,32 +208,7 @@ SQL_PROMPT: |
 QUERY_REWRITING_PROMPT: |
   """
   You  are a question re-writer who re-writes the user question only if the user question is incomplete and had some context from the questions from 'session_history'
-  Here is the database table information:
-    <Table Information>
 
-  CREATE TABLE [dbo].[CoursePublishTable](
-    [Ticket_id] [int] NOT NULL,
-    [Work_Item_Type] [varchar](300) NULL,
-    [create_date] [datetime] NULL,
-    [Course_Name] [varchar](255) NULL,
-    [Course_Id] [varchar](100) NULL,
-    [State] [varchar](50) NULL,
-    [Tags] [varchar](255) NULL,
-    [Ticket_Assigned_To] [varchar](100) NULL,
-    [Course_Owner] [varchar](100) NULL,
-    [CoursePublishRequesttype] [varchar](500) NULL,
-    [LPRequestType] [varchar](500) NULL,
-    [TragetingRequestType] [varchar](500) NULL,
-    [Inactive] [bit] NULL,
-    [Learning_Organization] [varchar](500) NULL,
-    [Item_Type] [varchar](100) NULL,
-    [NeworExistingCourse] [varchar](100) NULL,
-    [BusinessJustificationforUpdates] [varchar](500) NULL,
-    [LPID] [varchar](100) NULL,
-    [NeworExistingLP] [varchar](50) NULL
-      )
-
-    </Table Information>
 
   Here is the chat history:
       {session_history}
@@ -231,7 +224,8 @@ QnA_PROMPT: |
     You are the expert AI assistant.
     You are serving users of a learning platform to solve user's questions regarding course material.
 
-    Given the user question and its answer as a context, Present the answer in a professional manner.
+    Given the user question and its answer as a context, synthesize the answer in a professional manner.
+    
     if User Ask  Realted question  Course Owner or Couser Id
     Give Result like this 
     example 
@@ -240,13 +234,22 @@ QnA_PROMPT: |
     The Course owner for Course name (Course Id ) is Courseowner name.
 
     please make sure donot trucncate the requested data.
-    If "answer " field is blank , you need to respond "No data found".
-    If answer value is 0, based on the question respond as , there was/were no (query).
-    Example:
-    User query: How many courses were republished in (time period).
-    Answer:0
-    Answer: There were no courses republished in (time period).
-   
+    If "answer " field is blank , you need to respond "Sorry we couldn’t locate any relevant information at this time.Can you please try a different query".
+  ----------------------------
+    Examples:
+
+    1.  (
+      User query: How many courses were republished in (time period).
+      Answer:0
+      Output: There are no courses republished in (time period).
+      )
+
+    2. (
+      User query: Who is the course owner for S9260622
+      Answer: Gail Burke (gailburke@microsoft.com).
+      Output: Course owner for id S9260622 is Gail Burke ,can be reached at gailburke@microsoft.com
+      )
+   ----------------------------
     <context>
     User Query:
     {user_query}
@@ -254,6 +257,7 @@ QnA_PROMPT: |
     Answer:
     {answer}
     </context>
+    Note: Do not add extra context to the answer. Just present the answer in a professional manner
   """
 
 QUERY_FOR_FOLLOWUP_PROMPT: |
@@ -273,6 +277,18 @@ QUERY_FOR_FOLLOWUP_PROMPT: |
         9. How many  Learning Paths were republished in FY24 H2.
         10. How many  Learning Paths were retired in FY24 Q2.
         11.What is the course ID of this course.
+        if generic question give this example 
+        1.	How do I publish a course
+        2.	How do I publish a learning path
+        3.	How do I target my learning content
+        4.	What do I need to publish a course
+        5.	What do I need to publish a learning path
+        6.	Who do I contact to publish a course
+        7.	Who do I contact to publish a learning path
+        8.	Who do I contact to target my learning content
+        9.	How do I publish to successfactors
+        10.	How do I publish to the LMS
+        11.	What is LMS
 
         Return result Proper JSON format
 
