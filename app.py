@@ -31,26 +31,33 @@ def get_answer():
 
 def main(user_question, session_id):
     # Your existing main function code goes here
-    
-    session = llmutils.get_history()
-    if session is not None:
-        if session_id in session:
-            history = session[session_id][-5:]
+    followup,questions = llmutils.get_questions()
+    if  user_question not in questions:
+
+        session = llmutils.get_history()
+        if session is not None:
+            if session_id in session:
+                history = session[session_id][-5:]
+            else:
+                history = []
         else:
+            session = dict()
             history = []
+
+        history.append(user_question)
+        session[session_id] = history
+        _ = llmutils.write_history(session)
+
+        question = queryutils.query_rewriter(query=user_question, session_history=history)
+        
+    
     else:
-        session = dict()
-        history = []
-
-    history.append(user_question)
-    session[session_id] = history
-    _ = llmutils.write_history(session)
-
+        print("not in history")
+        question = user_question
+    
+    print(question)
     db = dbutils.get_db()
     table_info = dbutils.get_table_info()
-
-    question = queryutils.query_rewriter(query=user_question, session_history=history)
-    print(question)
 
     sql_query = queryutils.get_sql_query(query=question, table_info=table_info)
 
@@ -58,7 +65,7 @@ def main(user_question, session_id):
     print (answer)
     answer = queryutils.generate_qna_ans(user_query=question, answer=answer)
     print (answer)
-    followup = llmutils.get_questions() #queryutils.generate_qna_followup(user_query=question)
+     #queryutils.generate_qna_followup(user_query=question)
     print (followup)
     return answer, followup
 

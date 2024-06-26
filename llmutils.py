@@ -35,7 +35,7 @@ def get_questions():
 
         # Convert to JSON format
     output_json = json.dumps(input_data, indent=2)
-    return output_json
+    return output_json,questions
 
 def get_history():
     with open(config.HISTORY_FILE, "r", encoding="utf-8") as f:

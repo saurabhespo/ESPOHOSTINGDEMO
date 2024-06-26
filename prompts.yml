@@ -11,7 +11,14 @@ NL2SQL_PROMPT: |
        </context>
         Also, pay attention to which column is in which table.\nPay attention to use CAST(GETDATE() as date) function to get the current date, if the question involves "today".
         # also return distinct result and if data not found then use LIKE query if  and if user ask about lpid look LPIDExternal or LPIDInternal.
-        if user ask for course owner or couser id  in result  also return course id and course name
+        -----------------------------------------------
+        if user ask for course owner or couser id  in result  always return  course id and course name both
+        example query
+        SELECT [Course_Owner], [Course_Id], [Course_Name] FROM [CoursePublishTable] WHERE [Course_Name] LIKE '%%'
+        -----------------------------
+
+
+        
 
         1. if user ask Can you tell me how many times this course example Trust Code: SBC (Standards of Business Conduct) FY24 was republished -  
            Logic: Use 'Changes to Existing course' to analyze the number of requests submitted for Republish for this refer colunm NeworExistingCourse and do not include CoursePublishRequesttype colunm in query.
@@ -68,7 +75,7 @@ NL2SQL_PROMPT: |
 
     Note :please start fy from july not from january
 
-    To ascertain the count of newly published learning paths, check the "NeworExistingLP" column. For paths classified as "New Learning Path" in the "NeworExistingLP" column, they are considered newly published. Paths marked as "Existing Learning Path" in the "NeworExistingLP" column are those that have been republished. For retired paths, look for entries labeled "Retire a Learning Path. and take Distinct LPID".
+    To ascertain the count of newly published learning paths, check the "NeworExistingLP" column. For paths classified as "New Learning Path" in the "NeworExistingLP" column, they are considered newly published. Paths marked as "Existing Learning Path" in the "NeworExistingLP" column are those that have been republished. For retired paths, look for entries labeled "Retire a Learning Path. and take Distinct LPID and and refer  colunm for date take "create_date"".
 
     targeting requests
     if user ask for targeting requests please check "Work_Item_Type"  column and value  "targeting"
@@ -184,7 +191,7 @@ SQL_PROMPT: |
 
     Note :please start fy from july not from january
 
-    To ascertain the count of newly published learning paths, check the "NeworExistingLP" column. For paths classified as "New Learning Path" in the "NeworExistingLP" column, they are considered newly published. Paths marked as "Existing Learning Path" in the "NeworExistingLP" column are those that have been republished. For retired paths, look for entries labeled "Retire a Learning Path.".
+    To ascertain the count of newly published learning paths, check the "NeworExistingLP" column. For paths classified as "New Learning Path" in the "NeworExistingLP" column, they are considered newly published. Paths marked as "Existing Learning Path" in the "NeworExistingLP" column are those that have been republished. For retired paths, look for entries labeled "Retire a Learning Path. and refer  colunm for date take create_date ".
 
     targeting requests
     if user ask for targeting requests please check "Work_Item_Type"  column and value  "targeting"
@@ -248,6 +255,12 @@ QnA_PROMPT: |
       User query: Who is the course owner for S9260622
       Answer: Gail Burke (gailburke@microsoft.com).
       Output: Course owner for id S9260622 is Gail Burke ,can be reached at gailburke@microsoft.com
+      )
+
+    3. (
+      User query: Provide the course id  for [course name] in tabular format
+      Answer: [course id].
+      Output: | Course name | Course id |
       )
    ----------------------------
     <context>
