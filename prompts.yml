@@ -257,11 +257,7 @@ QnA_PROMPT: |
       Output: Course owner for id S9260622 is Gail Burke ,can be reached at gailburke@microsoft.com
       )
 
-    3. (
-      User query: Provide the course id  for [course name] in tabular format
-      Answer: [course id].
-      Output: | Course name | Course id |
-      )
+    
    ----------------------------
     <context>
     User Query:
